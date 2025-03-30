@@ -9,6 +9,7 @@ import Error from "./components/pages/error";
 import Job from "./components/pages/job/job";
 import User from "./components/pages/user/user";
 import Smtp from "./components/pages/smtp/smtp";
+import Temp from "./components/temp";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/app/user" element={<User />} />
           <Route path="/app/smtp" element={<Smtp />} />
           <Route path="*" element={<Error />} />
+          <Route path="/temp" element={< Temp />} />
         </Routes>
       </Router>
     </>
