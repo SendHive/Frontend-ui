@@ -3,14 +3,14 @@ import React from "react";
 const Layout = ({ children }) => {
   return (
     <div className="relative min-h-screen bg-blue-50">
-      <div className="container mx-auto px-2">{children}</div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">{children}</div>
 
       {/* Wave Section */}
-      <div className="absolute bottom-0 left-0 w-full h-1/4 overflow-hidden">
-        {/* ↓ This controls the wave height ↓ */}
+      <div className="absolute bottom-0 left-0 w-full h-1/6 sm:h-1/5 md:h-1/4 lg:h-1/3 overflow-hidden mt-4">
+        {/* ↓ Responsive Height Adjustments ↓ */}
         <svg
           className="absolute bottom-0 left-0 w-full h-full rotate-180"
-          viewBox="0 0 1200 60"  // ← This line controls SVG height (60 instead of 120)
+          viewBox="0 0 1200 60"  // Adjusted for responsive height
           preserveAspectRatio="none"
         >
           <path

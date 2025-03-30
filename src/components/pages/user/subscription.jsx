@@ -60,12 +60,12 @@ const Subscription = () => {
     switch (activeTab) {
       case "Overview":
         return (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 p-4 sm:p-6">
             {/* Left Section - Business Plan Details */}
-            <div className="border rounded-lg p-6 shadow-sm">
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-semibold">
-                  <span className="text-white bg-black px-1.5 py-1.5 rounded-md text-sm font-light">
+            <div className="border rounded-lg p-4 sm:p-6 shadow-sm">
+              <div className="flex flex-wrap justify-between items-center mb-4">
+                <h2 className="text-xl font-semibold flex items-center gap-2">
+                  <span className="text-white bg-black px-2 py-1 rounded-md text-sm font-light">
                     BUSINESS
                   </span>{" "}
                   Plan
@@ -92,26 +92,26 @@ const Subscription = () => {
                 onClick={() => {
                   setActiveTab("Plans");
                 }}
-                className="w-full mb-4 px-4 py-2 bg-green-400 text-black rounded-md hover:bg-green-500 transition-colors"
+                className="w-full mb-4 px-4 py-2  text-black rounded-md bg-green-400 hover:bg-green-500 transition-colors"
               >
                 Upgrade Plan
               </button>
 
               <p className="text-gray-500">Next Payment</p>
 
-              <div className="flex justify-between items-center mb-4">
+              <div className="flex flex-wrap justify-between items-center mb-4 gap-2">
                 <h2 className="text-md font-medium">
                   <span className="text-black">On 30 November, 2025</span>{" "}
                 </h2>
 
-                <button className=" bg-green-400 text-black hover:bg-green-500 transition-colors py-2 ml-2 px-2 rounded-lg">
+                <button className="bg-green-400 text-black hover:bg-green-500 transition-colors py-2 px-3 rounded-lg mt-3">
                   Manage Payments
                 </button>
               </div>
             </div>
 
             {/* Right Section - Subscription Dropdown */}
-            <div className="border rounded-lg p-6 shadow-sm">
+            <div className="border rounded-lg p-4 sm:p-6 shadow-sm">
               <h3 className="text-lg font-semibold mb-4">Subscription</h3>
               <div className="space-y-4">
                 <label className="block text-gray-600 text-sm">Plan</label>
@@ -130,21 +130,25 @@ const Subscription = () => {
         return <h1>This is the Plans section</h1>;
       case "Invoices":
         return (
-          <div className="w-full">
-            <h2 className="text-lg font-semibold mb-4 text-center">Invoices</h2>
-            <div className="space-y-2">
+          <div className="w-full max-w-2xl mx-auto p-4">
+            <h2 className="text-lg sm:text-xl font-semibold mb-4 text-center">
+              Invoices
+            </h2>
+            <div className="space-y-3 sm:space-y-4">
               {invoices.map((invoice) => (
                 <div
                   key={invoice.id}
-                  className="flex justify-between items-center p-4 border border-gray-300 rounded-lg bg-gray-50 relative"
+                  className="flex flex-wrap sm:flex-nowrap justify-between items-center p-3 sm:p-4 border border-gray-300 rounded-lg bg-gray-50 relative"
                 >
-                  <span className="text-gray-800 font-medium">
+                  <span className="text-gray-800 font-medium flex-1 truncate">
                     {invoice.name}
                   </span>
-                  <span className="text-gray-600">{invoice.date}</span>
+                  <span className="text-gray-600 text-sm sm:text-base sm:ml-4">
+                    {invoice.date}
+                  </span>
 
                   {/* Three-dot menu */}
-                  <div className="relative">
+                  <div className="relative sm:ml-4">
                     <button
                       onClick={() => toggleMenu(invoice.id)}
                       className="p-2"
@@ -153,9 +157,9 @@ const Subscription = () => {
                     </button>
 
                     {menuOpen === invoice.id && (
-                      <div className="absolute right-0 mt-2 w-32 bg-white shadow-lg border rounded-md z-10">
+                      <div className="absolute right-0 mt-2 w-28 bg-white shadow-lg border rounded-md z-10">
                         <button
-                          className="w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100"
+                          className="w-full text-left px-3 py-2 text-gray-800 hover:bg-gray-100"
                           onClick={() => alert(`Downloading ${invoice.name}`)}
                         >
                           Download
@@ -173,7 +177,7 @@ const Subscription = () => {
         return (
           <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Left Section */}
-            <div className="border-r pr-6">
+            <div className="border-b lg:border-b-0 lg:border-r pr-0 lg:pr-6 pb-6 lg:pb-0">
               <h2 className="text-xl font-semibold mb-4">
                 Select Payment Method
               </h2>
@@ -183,7 +187,7 @@ const Subscription = () => {
                 <button
                   className={`w-full px-4 py-3 rounded-md text-left ${
                     selectedMethod === "card"
-                      ? "bg-blue-600 text-white"
+                      ? "bg-green-400 hover:bg-green-500 transition-colors text-white"
                       : "bg-gray-100 text-gray-700"
                   }`}
                   onClick={() => setSelectedMethod("card")}
@@ -194,7 +198,7 @@ const Subscription = () => {
                 <button
                   className={`w-full px-4 py-3 rounded-md text-left ${
                     selectedMethod === "upi"
-                      ? "bg-blue-600 text-white"
+                      ? "bg-green-400 hover:bg-green-500 transition-colors text-white"
                       : "bg-gray-100 text-gray-700"
                   }`}
                   onClick={() => setSelectedMethod("upi")}
@@ -205,7 +209,7 @@ const Subscription = () => {
                 <button
                   className={`w-full px-4 py-3 rounded-md text-left ${
                     selectedMethod === "crypto"
-                      ? "bg-blue-600 text-white"
+                      ? "bg-green-400 hover:bg-green-500 transition-colors text-white"
                       : "bg-gray-100 text-gray-700"
                   }`}
                   onClick={() => setSelectedMethod("crypto")}
@@ -249,7 +253,7 @@ const Subscription = () => {
                       />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
                           Expiry Date
@@ -271,7 +275,7 @@ const Subscription = () => {
                         </label>
                         <div className="relative">
                           <input
-                            type={showCVC ? "text" : "password"} // Toggle password type
+                            type={showCVC ? "text" : "password"}
                             name="cvc"
                             value={cardDetails.cvc}
                             onChange={handleInputChange}
@@ -320,7 +324,7 @@ const Subscription = () => {
               )}
 
               {/* Proceed Payment Button */}
-              <button className="w-full mt-6 px-4 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+              <button className="w-full mt-6 px-4 py-3 bg-green-400 hover:bg-green-500 transition-colors text-white rounded-md ">
                 Proceed Payment
               </button>
             </div>
@@ -342,7 +346,7 @@ const Subscription = () => {
             onClick={() => setActiveTab(tab)}
             className={`px-3 py-2 text-sm font-medium ${
               activeTab === tab
-                ? "text-blue-600 border-b-2 border-blue-600"
+                ? "text-green-600 border-b-2 border-green-600"
                 : "text-gray-500 hover:text-gray-700"
             }`}
           >

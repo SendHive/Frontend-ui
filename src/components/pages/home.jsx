@@ -7,24 +7,22 @@ const Home = () => {
   let navigate = useNavigate();
   return (
     <Layout>
-      <section className="min-h-screen flex flex-col justify-start pt-20 px-4 sm:px-10">
+      <section className="pt-10 flex-col justify-center items-center">
         {/* Welcome Message */}
-        <div className="mb-10">
+        <div className="mb-10 text-center">
           <h1 className="font-medium text-xl sm:text-2xl md:text-3xl">
             "Welcome back, Vivek! What's on your mind today? 💭"
           </h1>
         </div>
 
-        {/* Row of Three Boxes, Aligned to Left */}
-        <div className="flex flex-wrap sm:flex-nowrap gap-6">
+        {/* Responsive Row of Three Boxes */}
+        <div className="flex flex-wrap justify-center gap-6 w-full px-4 sm:px-0">
           {/* Mail Status */}
           <div className="bg-white shadow-lg rounded-lg p-6 border border-gray-200 h-80 w-full sm:w-80 flex flex-col">
             <div className="flex justify-between items-center">
               <h2 className="text-lg font-semibold">Mail Status</h2>
               <FaArrowRight
-                onClick={() => {
-                  navigate("/app/job");
-                }}
+                onClick={() => navigate("/app/job")}
                 className="w-5 h-5 cursor-pointer"
               />
             </div>
@@ -33,12 +31,10 @@ const Home = () => {
               Initiate high-volume email campaigns with precision using this
               streamlined interface.
             </span>
-            <div className="mt-2 flex justify-center">
+            <div className="mt-auto flex justify-center">
               <button
-                onClick={() => {
-                  navigate("/app/job");
-                }}
-                className="w-80 py-2 text-center bg-[#4CAF50] cursor-pointer rounded-lg hover:bg-[#81C784] mt-12"
+                onClick={() => navigate("/app/job")}
+                className="w-full sm:w-80 py-2 text-center bg-[#4CAF50] cursor-pointer rounded-lg hover:bg-[#81C784]"
               >
                 Start
               </button>
@@ -50,9 +46,7 @@ const Home = () => {
             <div className="flex justify-between items-center">
               <h2 className="text-lg font-semibold">SMTP Details</h2>
               <FaArrowRight
-                onClick={() => {
-                  navigate("/app/smtp");
-                }}
+                onClick={() => navigate("/app/smtp")}
                 className="w-5 h-5 cursor-pointer"
               />
             </div>
@@ -63,12 +57,10 @@ const Home = () => {
               Efficiently configure and update your SMTP server settings to
               ensure seamless delivery of promotional emails.
             </span>
-            <div className="mt-2 flex justify-center">
+            <div className="mt-auto flex justify-center">
               <button
-                onClick={() => {
-                  navigate("/app/smtp");
-                }}
-                className="w-80 py-2 text-center bg-[#4CAF50] cursor-pointer rounded-lg hover:bg-[#81C784]"
+                onClick={() => navigate("/app/smtp")}
+                className="w-full sm:w-80 py-2 text-center bg-[#4CAF50] cursor-pointer rounded-lg hover:bg-[#81C784]"
               >
                 Configure
               </button>
@@ -80,9 +72,7 @@ const Home = () => {
             <div className="flex justify-between items-center">
               <h2 className="text-lg font-semibold">User Management</h2>
               <FaArrowRight
-                onClick={() => {
-                  navigate("/app/user");
-                }}
+                onClick={() => navigate("/app/user")}
                 className="w-5 h-5 cursor-pointer"
               />
             </div>
@@ -91,12 +81,10 @@ const Home = () => {
               Efficiently manage team members and their privileges within your
               email campaign system.
             </span>
-            <div className="mt-2 flex justify-center">
+            <div className="mt-auto flex justify-center">
               <button
-                onClick={() => {
-                  navigate("/app/user");
-                }}
-                className="w-80 py-2 text-center bg-[#4CAF50] cursor-pointer rounded-lg hover:bg-[#81C784] mt-11"
+                onClick={() => navigate("/app/user")}
+                className="w-full sm:w-80 py-2 text-center bg-[#4CAF50] cursor-pointer rounded-lg hover:bg-[#81C784]"
               >
                 Manage Users
               </button>
