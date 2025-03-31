@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { IoEyeOutline } from "react-icons/io5";
 import { FaRegEyeSlash } from "react-icons/fa";
-
+import Temp from "../../temp";
+import Price from "./price";
 const Subscription = () => {
   const [showCVC, setShowCVC] = useState(false);
   const [selectedMethod, setSelectedMethod] = useState("card");
@@ -104,7 +105,12 @@ const Subscription = () => {
                   <span className="text-black">On 30 November, 2025</span>{" "}
                 </h2>
 
-                <button className="bg-green-400 text-black hover:bg-green-500 transition-colors py-2 px-3 rounded-lg mt-3">
+                <button
+                  onClick={() => {
+                    setActiveTab("Payment details");
+                  }}
+                  className="bg-green-400 text-black hover:bg-green-500 transition-colors py-2 px-3 rounded-lg mt-3"
+                >
                   Manage Payments
                 </button>
               </div>
@@ -113,21 +119,26 @@ const Subscription = () => {
             {/* Right Section - Subscription Dropdown */}
             <div className="border rounded-lg p-4 sm:p-6 shadow-sm">
               <h3 className="text-lg font-semibold mb-4">Subscription</h3>
-              <div className="space-y-4">
+              <div className="space-y-4 mb-7">
                 <label className="block text-gray-600 text-sm">Plan</label>
-                <select className="w-full p-2 border rounded-md focus:ring focus:ring-green-300">
-                  <option>Demo</option>
-                  <option>Basic</option>
-                  <option>Standard</option>
-                  <option>Premium</option>
-                </select>
+                <input
+                  className="w-full p-2 border rounded-md focus:ring focus:ring-green-300"
+                  value="Basic"
+                ></input>
+              </div>
+              <div className="space-y-4">
+                <label className="block text-gray-600 text-sm">Contacts</label>
+                <input
+                  className="w-full p-2 border rounded-md focus:ring focus:ring-green-300"
+                  value="100"
+                ></input>
               </div>
             </div>
           </div>
         );
 
       case "Plans":
-        return <h1>This is the Plans section</h1>;
+        return <Price />;
       case "Invoices":
         return (
           <div className="w-full max-w-2xl mx-auto p-4">

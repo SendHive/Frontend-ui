@@ -2,16 +2,22 @@ import React from "react";
 
 const Job = () => {
   return (
-    <section className="max-h-screen flex flex-col justify-start pt-20 px-4 sm:px-10 bg-[#C8E6C9]">
-      <div className="mb-10 flex items-center justify-between">
-        <h1 className="font-medium text-4xl sm:text-xl md:text-2xl lg:text-3xl">
-          Mail Sender Service
-        </h1>
-        <button className="bg-[#4CAF50] hover:bg-[#81C784] text-white px-4 py-2 rounded-md ">
-          + Create
-        </button>
+    <div className="min-h-[50vh] w-full flex flex-col items-center justify-center pt-16 px-4">
+      <h1 className="text-2xl font-bold mb-6 text-center md:text-left">
+        Add Users
+      </h1>
+
+      <div className="flex flex-col md:flex-row w-full max-w-2xl mb-4 space-y-4 md:space-y-0 md:space-x-4">
+        <div className="relative flex-1">
+          {/* <TbUserSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" /> */}
+          <input
+            type="text"
+            className="w-full py-3 pl-12 pr-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Search Users"
+          />
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 

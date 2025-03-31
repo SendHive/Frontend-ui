@@ -20,7 +20,7 @@ const Home = () => {
           {/* Mail Status */}
           <div className="bg-white shadow-lg rounded-lg p-6 border border-gray-200 h-80 w-full sm:w-80 flex flex-col">
             <div className="flex justify-between items-center">
-              <h2 className="text-lg font-semibold">Mail Status</h2>
+              <h2 className="text-lg font-semibold">Send Mail</h2>
               <FaArrowRight
                 onClick={() => navigate("/app/job")}
                 className="w-5 h-5 cursor-pointer"
