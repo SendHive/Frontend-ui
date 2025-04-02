@@ -9,7 +9,7 @@ const UserAccount = () => {
   const [email, setEmail] = useState("jane234@example.com");
   const [phone, setPhone] = useState("(209) 555-0104");
   const [dob, setDob] = useState("3");
-  const [country, setCountry] = useState("Bangladesh");
+  const [country, setCountry] = useState("India");
 
   return (
     <div className="w-3/5  mx-auto bg-white p-6 rounded-xl shadow-md">

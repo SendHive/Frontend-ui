@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { IoEyeOutline } from "react-icons/io5";
 import { FaRegEyeSlash } from "react-icons/fa";
-import Temp from "../../temp";
 import Price from "./price";
 const Subscription = () => {
   const [showCVC, setShowCVC] = useState(false);
@@ -48,7 +47,6 @@ const Subscription = () => {
     },
   ];
 
-  const [invoiceList, setInvoiceList] = useState(invoices);
   const [activeTab, setActiveTab] = useState("Overview");
 
   const [menuOpen, setMenuOpen] = useState(null);

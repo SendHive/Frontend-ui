@@ -1,5 +1,4 @@
 import { React, useState } from "react";
-import { PriceConverter } from "./user";
 const Price = () => {
   let temp2 = 30;
   const pricingData = {
