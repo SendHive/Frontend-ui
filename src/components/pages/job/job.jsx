@@ -1,11 +1,20 @@
 import { TiHome } from "react-icons/ti";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AddJob from "./addJob";
 import AddFile from "./addFile";
 import RequestBody from "./requestBody";
 
 const Job = () => {
+  useEffect(() => {
+    let currTab = sessionStorage.getItem("tab");
+    if (!currTab) {
+      setActiveTab("Job Details");
+    } else {
+      setActiveTab(currTab);
+    }
+  }, []);
+
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("Job Details");
 
@@ -27,7 +36,9 @@ const Job = () => {
       <div className="flex items-center mt-2">
         <TiHome
           className="text-xl text-green-500 cursor-pointer"
-          onClick={() => navigate("/app/hub")}
+          onClick={() => {
+            navigate("/app/hub");
+          }}
         />
         <span className="ml-5 text-green-600 text-lg font-medium">Home</span>
       </div>
@@ -37,7 +48,10 @@ const Job = () => {
           {["Job Details", "Add Email", "Upload Request"].map((tab) => (
             <button
               key={tab}
-              onClick={() => setActiveTab(tab)}
+              onClick={() => {
+                setActiveTab(tab);
+                sessionStorage.setItem("tab", tab);
+              }}
               className={`mt-3 px-3 py-2 text-sm font-medium text-center whitespace-nowrap ${
                 activeTab === tab
                   ? "text-green-600 border-b-2 border-green-600"
